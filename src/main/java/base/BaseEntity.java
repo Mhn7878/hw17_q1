@@ -1,3 +1,5 @@
+package base;
+
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
