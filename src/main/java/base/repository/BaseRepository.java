@@ -17,6 +17,10 @@ public interface BaseRepository <T extends BaseEntity<ID>, ID extends Serializab
     List<T> findAll();
 
     T update(T entity);
+
     EntityManager getEntityManager();
+
+    long count();
+
 
 }

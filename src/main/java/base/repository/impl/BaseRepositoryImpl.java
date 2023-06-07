@@ -4,6 +4,9 @@ import base.BaseEntity;
 import base.repository.BaseRepository;
 
 import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
@@ -60,5 +63,20 @@ public abstract class BaseRepositoryImpl<T extends BaseEntity<ID>,
         } else {
             return null;
         }
+    }
+    @Override
+    public long count() {
+
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+
+        CriteriaQuery<Long> query = cb.createQuery(Long.class);
+
+        Root<T> root = query.from(getEntityClass());
+
+        query.select(
+                cb.count(root)
+        );
+
+        return em.createQuery(query).getSingleResult();
     }
 }

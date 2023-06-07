@@ -16,4 +16,7 @@ public interface BaseService<ID extends Serializable, T extends BaseEntity<ID>>{
     List<T> findAll();
 
     T update(T entity);
+
+    long count();
+
 }
