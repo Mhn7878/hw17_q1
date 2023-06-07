@@ -1,13 +1,12 @@
-package base.repository;
+package base.service;
 
 import base.BaseEntity;
 
-import javax.persistence.EntityManager;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
-public interface BaseRepository <T extends BaseEntity<ID>, ID extends Serializable>{
+public interface BaseService<ID extends Serializable, T extends BaseEntity<ID>>{
     T save(T entity);
 
     Optional<T> findById(ID id);
@@ -17,6 +16,4 @@ public interface BaseRepository <T extends BaseEntity<ID>, ID extends Serializab
     List<T> findAll();
 
     T update(T entity);
-    EntityManager getEntityManager();
-
 }
