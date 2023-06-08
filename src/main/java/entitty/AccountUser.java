@@ -1,13 +1,11 @@
 package entitty;
 
 import base.BaseEntity;
+import javassist.util.proxy.ProxyFactory;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -17,8 +15,11 @@ import javax.persistence.OneToOne;
 @ToString
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class AccountUser extends BaseEntity<Long> {
+    @Column(unique = true)
     String userName;
+
     String firstName;
+
     String lastName;
 
 

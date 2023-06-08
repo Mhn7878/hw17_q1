@@ -1,4 +1,4 @@
-package Repository.impl;
+package Repository;
 
 import base.repository.BaseRepository;
 import entitty.Likes;

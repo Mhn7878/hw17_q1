@@ -1,9 +1,7 @@
 package service.impl;
 
-import Repository.CommentRepository;
-import Repository.impl.LikesRepository;
+import Repository.LikesRepository;
 import base.service.impl.BaseServiceImpl;
-import entitty.Comment;
 import entitty.Likes;
 
 public class LikesServiceImpl extends BaseServiceImpl<Likes, Long, LikesRepository> {

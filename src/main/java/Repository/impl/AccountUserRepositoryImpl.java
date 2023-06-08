@@ -30,4 +30,9 @@ public class AccountUserRepositoryImpl extends BaseRepositoryImpl< AccountUser,L
     }
 
 
+    @Override
+    public AccountUser searchByUserName(String userName) {
+        return em.createQuery("select  a from AccountUser as a  where a.userName=:userName"
+                        ,AccountUser.class).setParameter("userName",userName).getSingleResult();
+    }
 }

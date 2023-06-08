@@ -1,8 +1,7 @@
 package Repository.impl;
 
-import Repository.CommentRepository;
+import Repository.LikesRepository;
 import base.repository.impl.BaseRepositoryImpl;
-import entitty.Comment;
 import entitty.Likes;
 
 import javax.persistence.EntityManager;
