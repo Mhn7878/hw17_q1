@@ -26,6 +26,10 @@ public class Likes extends BaseEntity<Long> {
     @ManyToOne
     AccountUser accountUser;
 
+    public Likes(Tweet tweet) {
+        this.tweet = tweet;
+    }
+
     public Likes(Tweet tweet, AccountUser accountUser) {
         this.tweet = tweet;
         this.accountUser = accountUser;
